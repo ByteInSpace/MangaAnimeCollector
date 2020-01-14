@@ -1,6 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
-</LinearLayout>
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        style="@style/MangaAnimeCollectionDrawerStyle"
+
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            style="@style/MangaAnimeCollectionToolbarStyle"
+            app:popupTheme="@style/MangaAnimeCollectionToolbarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:id="@+id/toolbar"
+            android:elevation="4dp"
+
+            >
+        </androidx.appcompat.widget.Toolbar>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar"
+            android:gravity="center"
+
+            >
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ib1"
+                android:background="@drawable/newspaper_very_big"
+                android:onClick="ib1Click"
+
+                style="@style/MangaAnimeCollectionMainViewIcons"
+                />
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ib8"
+                android:background="@drawable/press_very_big"
+                android:layout_toRightOf="@id/ib1"
+                android:onClick="ib8Click"
+
+                style="@style/MangaAnimeCollectionMainViewIcons"
+                />
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/iba1"
+                android:background="@drawable/forms_very_big"
+                android:layout_toRightOf="@id/ib8"
+                android:onClick="iba1Click"
+
+                style="@style/MangaAnimeCollectionMainViewIcons"
+                />
+
+
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ib2"
+                android:background="@drawable/chart_very_big"
+                android:onClick="ib2Click"
+                android:layout_below="@id/ib1"
+                style="@style/MangaAnimeCollectionMainViewIcons"
+                />
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ib3"
+                android:background="@drawable/futures_very_big"
+                android:onClick="ib3Click"
+                android:layout_toRightOf="@id/ib2"
+                android:layout_below="@id/ib8"
+                style="@style/MangaAnimeCollectionMainViewIcons"
+                />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/iba2"
+                android:background="@drawable/margin_very_big"
+                android:onClick="iba2Click"
+                android:layout_toRightOf="@id/ib3"
+                android:layout_below="@id/iba1"
+                style="@style/MangaAnimeCollectionMainViewIcons"
+                />
+
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ib4"
+                android:background="@drawable/options_very_big"
+                android:onClick="ib4Click"
+                android:layout_below="@id/ib2"
+                style="@style/MangaAnimeCollectionMainViewIcons"
+                />
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ib5"
+                android:background="@drawable/game_very_big"
+                android:onClick="ib5Click"
+                android:layout_below="@id/ib3"
+                android:layout_toRightOf="@id/ib4"
+                style="@style/MangaAnimeCollectionMainViewIcons"
+                />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/iba3"
+                android:background="@drawable/rules_very_big"
+                android:onClick="iba3Click"
+                android:layout_below="@id/iba2"
+                android:layout_toRightOf="@id/ib5"
+                style="@style/MangaAnimeCollectionMainViewIcons"
+                />
+
+
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ib6"
+                android:background="@drawable/member_very_big"
+                android:onClick="ib6Click"
+                android:layout_below="@+id/ib4"
+
+                style="@style/MangaAnimeCollectionMainViewIcons"
+                />
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ib7"
+                android:background="@drawable/settings_very_big"
+                android:layout_below="@id/ib5"
+                android:layout_toRightOf="@id/ib6"
+
+                android:onClick="ib7Click"
+                style="@style/MangaAnimeCollectionMainViewIcons"
+                />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+
+    <ListView
+        android:id="@+id/navList"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="left|start"
+        style="@style/MangaAnimeCollectionDrawerStyle"
+        />
+
+</RelativeLayout>

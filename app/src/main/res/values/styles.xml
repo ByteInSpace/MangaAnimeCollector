@@ -8,4 +8,45 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="MangaAnimeCollectionDrawerStyle">
+        <item name="android:background">@color/menu_background</item>
+        <item name="android:textColor">@color/menu_text</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">16dp</item>
+
+    </style>
+
+    <style name="MangaAnimeCollectionMainViewIcons">
+        <item name="android:layout_margin">24dp</item>
+    </style>
+
+    <style name="MangaAnimeCollectionToolbarStyle">
+        <item name="android:maxHeight">@dimen/abc_action_bar_default_height_material</item>
+        <item name="android:listPreferredItemHeight">5dp</item>
+        <item name="android:background">@color/bar_background</item>
+        <item name="android:textColorPrimary">@color/bar_text</item>
+        <item name="android:textColorSecondary">@color/bar_text</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="actionMenuTextColor">@color/bar_text</item>
+    </style>
+
+    <style name="MangaAnimeCollectionTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:popupMenuStyle">@style/MyApp.PopupMenu</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+    </style>
+    <style name="MyApp.PopupMenu" parent="android:Widget.Holo.Light.ListPopupWindow">
+        <item name="android:popupBackground">@color/bar_background</item>
+    </style>
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+    </style>
 </resources>

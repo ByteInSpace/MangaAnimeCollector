@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MangaAnimeCollector</string>
+    <string name="title_activity_basic">BasicActivity</string>
+    <string name="drawer_open">pen navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="welcome_no_user">Willkommen!</string>
 </resources>
