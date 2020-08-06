@@ -17,6 +17,9 @@ public class Language {
 	@OneToMany(mappedBy = "language")
 	private List<Manga> mangas;
 	
+	@OneToMany(mappedBy = "language")
+	private List<Manga> artbooks;
+	
 	public String getLanguage() {
 		return language;
 	}

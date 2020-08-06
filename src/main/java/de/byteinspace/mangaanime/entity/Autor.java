@@ -18,6 +18,9 @@ public class Autor {
 	
 	@OneToMany(mappedBy = "autor")
 	private List<Manga> mangas;
+	
+	@OneToMany(mappedBy = "autor")
+	private List<Manga> artbooks;
 
 	public String getVorname() {
 		return vorname;

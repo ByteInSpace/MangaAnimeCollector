@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -14,9 +15,8 @@ public class Goodies {
 	private Long id;
 	private String goodieName;
 	
-	
-	@OneToMany(mappedBy = "autor")
-	private List<Manga> mangas;
+	@ManyToOne
+	private Manga manga;
 
 
 	public String getGoodieName() {
@@ -26,6 +26,26 @@ public class Goodies {
 
 	public void setGoodieName(String goodieName) {
 		this.goodieName = goodieName;
+	}
+
+
+	public Long getId() {
+		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+	public Manga getManga() {
+		return manga;
+	}
+
+
+	public void setManga(Manga manga) {
+		this.manga = manga;
 	}
 	
 	

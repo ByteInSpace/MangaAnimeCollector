@@ -19,7 +19,7 @@ public class Manga {
 	private int bandNummer;
 	@ManyToOne
 	private Autor autor;
-	private int condition;
+	private int mangaCondition;
 	@ManyToOne
 	private Language language;
 	private boolean hardCover; // True if Hard, False if Soft
@@ -27,7 +27,7 @@ public class Manga {
 	@ManyToOne
 	private Publisher publisher;
 	private int ISBN;
-	@OneToMany(mappedBy = "goodiesName")
+	@OneToMany(mappedBy = "manga")
 	private List<Goodies> goodies;
 	
 	
@@ -59,11 +59,11 @@ public class Manga {
 	public void setAutor(Autor autor) {
 		this.autor = autor;
 	}
-	public int getCondition() {
-		return condition;
+	public int getMangaCondition() {
+		return mangaCondition;
 	}
-	public void setCondition(int condition) {
-		this.condition = condition;
+	public void setMangaCondition(int mangaCondition) {
+		this.mangaCondition = mangaCondition;
 	}
 	public Language getLanguage() {
 		return language;
