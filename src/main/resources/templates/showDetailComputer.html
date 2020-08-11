@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>Retrocomputer Database</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" th:href="@{/style/style.css}" title="style" />
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div th:replace="headerfiles :: header">
+      </div>
+    </div>
+    <div id="site_content">
+      <div class="sidebar">
+        <div th:replace="sidebar :: sidebar"> </div> 
+      </div>
+      <div id="content">
+        
+        
+   <h1><span th:text="${computer.company.name}">Company </span> <span th:text="${computer.name}">Computername</span></h1>
+   
+   <img th:src="@{/images/{computerimage}(computerimage=${computer.image})}" width="200" height="200">
+<table>
+	<thead>
+		<tr>
+			<th>Eigenschaft</th>
+			<th>Details</th>
+		</tr>
+		<tbody>
+			<tr>
+				<td>Hersteller:</td>
+				<td><span th:text="${computer.company.name}">Company</span></td>
+			</tr>
+			<tr>
+				<td>CPU:</td>
+				<td><span th:text="${computer.cpu.name}">Cpu</span></td>
+			</tr>
+			<tr>
+				<td>RAM:</td>
+				<td><span th:text="${computer.ram}">RAM</span> KB</td>
+			</tr>
+			<tr>
+				<td>ROM:</td>
+				<td><span th:text="${computer.rom}">ROM</span> KB</td>
+			</tr>
+			<tr>
+				<td>Grafik:</td>
+				<td><span th:text="${computer.graphicalModes}">Grafik</span></td>
+			</tr>
+			<tr>
+				<td>Sound:</td>
+				<td><span th:text="${computer.soundModes}">Sound</span></td>
+			</tr>
+			<tr>
+				<td>Erscheinungsjahr:</td>
+				<td><span th:text="${computer.year}">Jahr</span></td>
+			</tr>
+			<tr>
+				<td>Kaufpreis:</td>
+				<td><span th:text="${computer.price}">Kaufpreis</span></td>
+			</tr>
+			<tr>
+				<td>Ports:</td>
+				<td><span th:text="${computer.ports}">Ports</span></td>
+			</tr>
+		</tbody>
+</table>
+      </div>
+    </div>
+    <div id="footer">
+    <div th:replace="footer :: footer">  
+  	</div>
+  </div>
+</body>
+</html>
+

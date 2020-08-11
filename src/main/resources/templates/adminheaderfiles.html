@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <body>
+  
+    <div th:fragment="adminheader">
+     <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="index.html"><span class="logo_colour">RetroComputer_Database</span></a></h1>
+          <h2>Computer history</h2>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/admin/computer/showall">Computer</a></li>
+          <li><a href="/admin/company/showall">Hersteller</a></li>
+          <li><a href="another_page.html">Meine Sammlung</a></li>
+          <li><a href="contact.html">Über mich</a></li>
+        </ul>
+      </div>
+    </div>
+  
+  </body>
+  
+</html>

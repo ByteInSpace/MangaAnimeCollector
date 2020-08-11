@@ -22,6 +22,11 @@ public class Autor {
 	@OneToMany(mappedBy = "autor")
 	private List<Manga> artbooks;
 
+	public Autor() {
+		super();
+	}
+	
+	
 	public Autor(String vorname, String nachname) {
 		super();
 		this.vorname = vorname;
