@@ -67,6 +67,7 @@ public class StartupRunner implements CommandLineRunner {
 		artbook1.setArtbookTitle("Ranma Artbook");
 		artbook1.setLanguage(lang1);
 		artbook1.setArtbookCondition(5);
+		artbook1.setImage("ranma.jpg");
 		artbookRepository.save(artbook1);
 		
 		
@@ -76,6 +77,7 @@ public class StartupRunner implements CommandLineRunner {
 		artbook2.setArtbookTitle("Kenshin Artbook");
 		artbook2.setLanguage(lang2);
 		artbook2.setArtbookCondition(4);
+		artbook2.setImage("kenshin.jpg");
 		artbookRepository.save(artbook2);
 		
 		Artbook artbook3 = new Artbook();
@@ -84,6 +86,7 @@ public class StartupRunner implements CommandLineRunner {
 		artbook3.setArtbookTitle("Shao Artbook");
 		artbook3.setLanguage(lang2);
 		artbook3.setArtbookCondition(3);
+		artbook3.setImage("shao.jpg");
 		artbookRepository.save(artbook3);
 		
 		logger.info("Example data stored");

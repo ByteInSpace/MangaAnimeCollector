@@ -7,7 +7,10 @@ html
 
 body
 { font: normal .80em 'trebuchet ms', arial, sans-serif;
-  background: #F0EFE2 ;
+  /*background: #F0EFE2 ;*/
+  background-image: url("background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   color: #000;}
 
 p
@@ -121,7 +124,7 @@ ol li
 { width: 898px;
   height: 52px;
   padding: 0;
-  background: #000;} 
+  background: #2c95d9;} 
 
 ul#menu, ul#menu li
 { float: left;
@@ -287,6 +290,6 @@ table tr th, table tr td
   text-align: left;}
   
 table tr td
-{ background: #F0EFE2;
+{ background: #d9efff;
   color: #47433F;
   border-top: 1px solid #FFF;}

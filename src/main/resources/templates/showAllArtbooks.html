@@ -3,7 +3,7 @@
 	xmlns:th="http://www.thymeleaf.org">
 
 <head>
-  <title>Retrocomputer Database</title>
+  <title>Anime Manga Database</title>
   <meta name="description" content="website description" />
   <meta name="keywords" content="website keywords, website keywords" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -17,9 +17,7 @@
       </div>
     </div>
     <div id="site_content">
-      <div class="sidebar">
-        <div th:replace="sidebar :: sidebar"> </div> 
-      </div>
+      
       <div id="content">
         
    <h1>Artbooks</h1>
@@ -27,11 +25,17 @@
 	<thead>
 		<tr>
 			<th></th>
-			<th>Hersteller</th>
+			<th>Serie</th>
+			<th>Name</th>
 		</tr>
 		<tbody>
 			<tr th:each=" artbook : ${artbooks}">
-				<!--  <td><img th:src="@{/images/thumb/{companythumb}(companythumb=${company.thumb})}"></td> -->
+				<td>
+					<a th:href="@{/artbook/{id}(id=${artbook.id})}">
+				 		<img th:src="@{/images/thumb/{artbookthumb}(artbookthumb=${artbook.image})}">
+					</a>
+				</td> 
+				<td><span th:text="${artbook.serie.nameDeutsch}">Serie</span></td>
 				<td><span th:text="${artbook.artbookTitle}">Name Deutsch</span></td>
 		</tbody>
 </table>
