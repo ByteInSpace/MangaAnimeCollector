@@ -3,7 +3,7 @@
 	xmlns:th="http://www.thymeleaf.org">
 
 <head>
-  <title>Anime Manga  Database</title>
+  <title>Retrocomputer Database</title>
   <meta name="description" content="website description" />
   <meta name="keywords" content="website keywords, website keywords" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -21,25 +21,8 @@
         <div th:replace="sidebar :: sidebar"> </div> 
       </div>
       <div id="content">
-        <a href="/admin/artbook/addNewArtbook">Neues Artbook anlegen</a>
-   <table>
-	<thead>
-		<tr>
-			<th></th>
-			<th>Serie</th>
-			<th>Artbook Name</th>
-			<th>Edit</th>
-			<th>Delete</th>
-		</tr>
-		<tbody>
-			<tr th:each=" artbook : ${artbooks}">
-				<td><img th:src="@{/images/thumb/{artbookthumb}(artbookthumb=${artbook.image})}"></td>
-				<td><span th:text="${artbook.serie.nameDeutsch}">Serie</span></td>
-				<td><span th:text="${artbook.artbookTitle}">Name Deutsch</span></td>
-				<td><a th:href="@{/admin/artbook/edit/{id}(id=${artbook.id})}">Edit</a></td>
-				<td><a th:href="@{/admin/artbook/delete/{id}(id=${artbook.id})}">Delete</a></td>
-		</tbody>
-</table>
+        
+   <h1>Artbook wurde hinzugefügt</h1>
       </div>
     </div>
     <div id="footer">
