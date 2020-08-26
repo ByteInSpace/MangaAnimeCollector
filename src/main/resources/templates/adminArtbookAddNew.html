@@ -22,7 +22,7 @@
         
         <h1>Neuen Artbook hinzufügen</h1>
         
-        <form action="#" th:action="@{/admin/artbook/addNewArtbookConfirmation}" th:object="${artbook}" method="post">
+        <form action="#" th:action="@{/admin/artbook/addNewArtbookConfirmation}" th:object="${artbook}" method="post"  enctype="multipart/form-data">
           
 <table>
 	<thead>
@@ -84,6 +84,10 @@
 						<option value="6">6</option>
 					</select>
 				
+			</tr>
+			<tr>
+				<td>Foto</td>
+				<td><input type="file" name="file" class="form-control-file"></td>
 			</tr>
 		</tbody>
 </table>

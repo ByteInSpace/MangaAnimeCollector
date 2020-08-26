@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>Anime und Manga Sammlung</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" th:href="@{/style/style.css}" title="style" />
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div th:replace="headerfiles :: header">
+      </div>
+    </div>
+    <div id="site_content">
+     
+      <div id="content">
+        
+        <h1>Neue Serie anlegen</h1>
+        
+        <form action="#" th:action="@{/admin/serie/addConfirmation}" th:object="${serie}" method="post"  enctype="multipart/form-data">
+          
+          <input type="hidden" th:field="*{id}" />
+<table>
+	<thead>
+		
+		<tbody>
+		<tr>
+				<td>Orginaltitel:</td>
+				<td><input type="text" th:field="*{nameOrginal}" /></td>
+			</tr>
+		<tr>
+				<td>Titel Deutsch:</td>
+				<td><input type="text" th:field="*{nameDeutsch}" /></td>
+			</tr>
+		</tbody>
+</table>
+<p><input type="hidden" name="action" th:value="${action}"></p>
+
+<p> <input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+
+</form>
+
+      </div>
+    </div>
+    <div id="footer">
+    <div th:replace="footer :: footer">  
+  	</div>
+  </div>
+</body>
+</html>
+
