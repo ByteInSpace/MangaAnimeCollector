@@ -15,6 +15,8 @@ public class Serie {
 	private Long id;
 	private String nameDeutsch;
 	private String nameOrginal;
+	private String fileName;
+	
 	@OneToMany(mappedBy = "serie")
 	private List<Manga> mangas;
 	@OneToMany(mappedBy = "serie")
@@ -39,6 +41,12 @@ public class Serie {
 	}
 	public void setNameOrginal(String nameOrginal) {
 		this.nameOrginal = nameOrginal;
+	}
+	public String getFileName() {
+		return fileName;
+	}
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
 	}
 	
 	

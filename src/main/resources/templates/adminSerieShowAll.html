@@ -33,6 +33,7 @@
 		</tr>
 		<tbody>
 			<tr th:each="serie : ${series}">
+				<td><img th:src="@{'/collection/serie/thumb/' + ${serie.fileName}}" />
 				<td><span th:text="${serie.nameDeutsch}">Orginaltitel</span></td>
 				<td><span th:text="${serie.nameOrginal}">Titel Deutsch</span></td>
 				<td><a th:href="@{/admin/serie/edit/{id}(id=${serie.id})}">Edit</a></td>

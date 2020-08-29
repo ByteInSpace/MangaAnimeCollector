@@ -3,7 +3,7 @@
 	xmlns:th="http://www.thymeleaf.org">
 
 <head>
-  <title>Anime und Manga Sammlung</title>
+  <title>Anime and Manga Collection</title>
   <meta name="description" content="website description" />
   <meta name="keywords" content="website keywords, website keywords" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -19,34 +19,24 @@
     <div id="site_content">
      
       <div id="content">
+        <h1>Serien</h1>
         
-        <h1>Neue Serie anlegen</h1>
-        
-        <form action="#" th:action="@{/admin/serie/addConfirmation}" th:object="${serie}" method="post"  enctype="multipart/form-data">
-          
-          <input type="hidden" th:field="*{id}" />
-          
-           <input type="file" name="fileToUpload">
+          <img th:src="@{'/collection/serie/' + ${serie.fileName}}" />
 <table>
 	<thead>
 		
 		<tbody>
-		<tr>
+			<tr>
 				<td>Orginaltitel:</td>
-				<td><input type="text" th:field="*{nameOrginal}" /></td>
+				<td><span th:text="${serie.nameOrginal}">Name Deutsch</span></td>
 			</tr>
-		<tr>
-				<td>Titel Deutsch:</td>
-				<td><input type="text" th:field="*{nameDeutsch}" /></td>
+			<tr>
+				<td>Deutscher Titel:</td>
+				<td><span th:text="${serie.nameDeutsch}">Name Japanisch</span></td>
 			</tr>
+			
 		</tbody>
 </table>
-<p><input type="hidden" name="action" th:value="${action}"></p>
-
-<p> <input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
-
-</form>
-
       </div>
     </div>
     <div id="footer">

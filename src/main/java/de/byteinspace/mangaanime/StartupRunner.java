@@ -32,16 +32,19 @@ public class StartupRunner implements CommandLineRunner {
 		Serie serie1 = new Serie();
 		serie1.setNameDeutsch("Ranma 1/2 DEU");
 		serie1.setNameOrginal("Ranma 1/2 JP");
+		serie1.setFileName("ranma.png");
 		serieRepository.save(serie1);
 		
 		Serie serie2 = new Serie();
 		serie2.setNameDeutsch("Rorouni Kenshin DEU");
 		serie2.setNameOrginal("Rorouni Kenshin JAP");
+		serie2.setFileName("kenshin.png");
 		serieRepository.save(serie2);
 		
 		Serie serie3 = new Serie();
 		serie3.setNameDeutsch("Shao die Mondfee");
 		serie3.setNameOrginal("Mamotte Shugogetten");
+		serie3.setFileName("mamotte.png");
 		serieRepository.save(serie3);
 		
 		Language lang1 = new Language();
