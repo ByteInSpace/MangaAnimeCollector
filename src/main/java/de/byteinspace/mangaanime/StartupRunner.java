@@ -56,12 +56,15 @@ public class StartupRunner implements CommandLineRunner {
 		languageRepository.save(lang2);
 		
 		Autor autor1 = new Autor("Rumiko", "Takahashi");
+		autor1.setFileName("rumiko.png");
 		autorRepository.save(autor1);
 		
 		Autor autor2 = new Autor("Nobuhiro", "Watsuki");
+		autor2.setFileName("nobuhiro.png");
 		autorRepository.save(autor2);
 		
 		Autor autor3 = new Autor("Minene", "Sakurano");
+		autor3.setFileName("minene.png");
 		autorRepository.save(autor3);
 		
 		Artbook artbook1 = new Artbook();

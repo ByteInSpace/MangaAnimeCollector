@@ -11,17 +11,31 @@
 
 <body>
   <div id="main">
-    <div id="adminheader">
-      <div th:replace="adminheaderfiles :: adminheader">
+    <div id="header">
+      <div th:replace="headerfiles :: header">
       </div>
     </div>
     <div id="site_content">
-      <div class="sidebar">
-        <div th:replace="sidebar :: sidebar"> </div> 
-      </div>
+     
       <div id="content">
+        <h1>Autor</h1>
         
-   <h1>Serie wurde hinzugefügt</h1>
+          <img th:src="@{'/collection/autor/' + ${autor.fileName}}" />
+<table>
+	<thead>
+		
+		<tbody>
+			<tr>
+				<td>Vorname:</td>
+				<td><span th:text="${autor.vorname}">Vorname</span></td>
+			</tr>
+			<tr>
+				<td>Nachname:</td>
+				<td><span th:text="${autor.nachname}">Nachname</span></td>
+			</tr>
+			
+		</tbody>
+</table>
       </div>
     </div>
     <div id="footer">
