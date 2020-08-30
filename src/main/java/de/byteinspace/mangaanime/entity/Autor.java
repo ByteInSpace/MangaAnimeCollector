@@ -15,6 +15,7 @@ public class Autor {
 	private Long id;
 	private String vorname;
 	private String nachname;
+	private String fileName;
 	
 	@OneToMany(mappedBy = "autor")
 	private List<Manga> mangas;
@@ -61,6 +62,18 @@ public class Autor {
 	public void setNachname(String nachname) {
 		this.nachname = nachname;
 	}
+
+
+
+	public String getFileName() {
+		return fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+	
+	
 	
 	
 }

@@ -293,3 +293,9 @@ table tr td
 { background: #d9efff;
   color: #47433F;
   border-top: 1px solid #FFF;}
+  
+  
+#stimage {
+     content: url("startimage.jpg");
+     width: 900px;
+}

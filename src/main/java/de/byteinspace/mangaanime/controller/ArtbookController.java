@@ -23,6 +23,12 @@ public class ArtbookController {
 		return artbookService.getAllArtbooks();
 	}
 	
+	@GetMapping("/")
+	public String getAllArtbooksHome(Model model) {
+		model.addAttribute("artbooks", artbookService.getAllArtbooks());
+		return "showAllArtbooks";
+	}
+	
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public String showOneArtbook(@PathVariable Long id, Model model ) {
 		model.addAttribute("artbook", artbookService.getArtbookByID(id));

@@ -14,4 +14,8 @@ public class AutorService {
 	public Iterable<Autor> getAllAutors() {
 		return autorRepository.findAll();
 	}
+
+	public Autor getAutorByID(Long id) {
+		return autorRepository.findAutorById(id);
+	}
 }
