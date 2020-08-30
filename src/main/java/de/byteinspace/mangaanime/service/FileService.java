@@ -32,7 +32,7 @@ public class FileService {
 	private static Logger log = LoggerFactory.getLogger(FileService.class);
 	
 	
-	public String uploadFile(MultipartFile uploadFile, String uploadSubpathPart)  {
+	public String uploadFile(MultipartFile uploadFile, String uploadSubpathPart, String fileName)  {
 		
 		
 		String uploadPath = uploadDir + "/" + uploadSubpathPart + "/";
@@ -44,9 +44,10 @@ public class FileService {
 		}
 		
 		
-		String fileName = getOriginalFileName(uploadFile);
-		fileName = fileName.substring(0, fileName.length()-3);
-		fileName = fileName + "png";
+		if (fileName == null || fileName.length() == 0)
+		{
+			fileName = uploadSubpathPart + "_" + System.currentTimeMillis() + ".png";
+		}
 		
 		String fileNameWithPath = uploadPath + fileName;
 		

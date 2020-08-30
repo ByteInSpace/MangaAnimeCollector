@@ -57,7 +57,7 @@ public class SerieAdminController {
 	
 	@RequestMapping(value="/edit/{id}", method=RequestMethod.GET)
 	public String editSerie(@PathVariable Long id, Model model) {
-		model.addAttribute("serie",  serienService.findSerieByID(id));
+		model.addAttribute("serie",  serienService.getSerieByID(id));
 		model.addAttribute("action", "edit");
 		return "adminSerieAddEdit";
 	}

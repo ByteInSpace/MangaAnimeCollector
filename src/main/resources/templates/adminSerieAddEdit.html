@@ -24,8 +24,11 @@
         
         <form action="#" th:action="@{/admin/serie/addConfirmation}" th:object="${serie}" method="post"  enctype="multipart/form-data">
           
-          <input type="hidden" th:field="*{id}" />
+         <img th:src="@{'/collection/serie/' + *{fileName}}" />
           
+          <input type="hidden" th:field="*{id}" />
+           <input type="hidden" th:field="*{fileName}" />
+           
            <input type="file" name="fileToUpload">
 <table>
 	<thead>

@@ -39,17 +39,13 @@ public class SerieService {
 		serieRepository.save(serie);
 	}
 
-	public Object findSerieByID(Long id) {
-		return serieRepository.findById(id);
-	}
-
 	public void updateSerie(Serie serie) {
 		log.info("Updating " + serie.toString());
 		serieRepository.save(serie);
 	}
 	
 	public void processAddUpdate(Serie serie, final String action, final MultipartFile  uploadFile) {
-		String fileName = fileService.uploadFile(uploadFile, FILE_SUB_PATH);
+		String fileName = fileService.uploadFile(uploadFile, FILE_SUB_PATH, serie.getFileName());
 		if (fileName != "")
 			serie.setFileName(fileName);
 		
