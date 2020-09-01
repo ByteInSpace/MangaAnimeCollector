@@ -33,7 +33,7 @@
 		</tr>
 		<tbody>
 			<tr th:each=" artbook : ${artbooks}">
-				<td><img th:src="@{/images/thumb/{artbookthumb}(artbookthumb=${artbook.image})}"></td>
+				<td><img th:src="@{'/collection/artbook/thumb/' + ${artbook.fileName}}" />
 				<td><span th:text="${artbook.serie.nameDeutsch}">Serie</span></td>
 				<td><span th:text="${artbook.artbookTitle}">Name Deutsch</span></td>
 				<td><a th:href="@{/admin/artbook/edit/{id}(id=${artbook.id})}">Edit</a></td>

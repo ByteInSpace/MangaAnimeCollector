@@ -24,6 +24,12 @@
         
         <form action="#" th:action="@{/admin/artbook/addNewArtbookConfirmation}" th:object="${artbook}" method="post"  enctype="multipart/form-data">
           
+          <img th:src="@{'/collection/artbook/' + *{fileName}}" />
+          
+          <input type="hidden" th:field="*{id}" />
+           <input type="hidden" th:field="*{fileName}" />
+           
+           <input type="file" name="fileToUpload">
 <table>
 	<thead>
 		

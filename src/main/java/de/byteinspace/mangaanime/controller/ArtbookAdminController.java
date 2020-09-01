@@ -9,8 +9,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import de.byteinspace.mangaanime.entity.Artbook;
+import de.byteinspace.mangaanime.entity.Serie;
 import de.byteinspace.mangaanime.service.ArtbookService;
 import de.byteinspace.mangaanime.service.AutorService;
 import de.byteinspace.mangaanime.service.LanguageService;
@@ -50,13 +53,23 @@ public class ArtbookAdminController {
 		model.addAttribute("series", serieService.getAllSeries() );
 		model.addAttribute("autors", autorService.getAllAutors());
 		model.addAttribute("languages", languageService.getAllLanguages());
-		return "adminArtbookAddNew";
+		return "adminArtbookAddEdit";
 	}
 	
 	@PostMapping("/addNewArtbookConfirmation")
-	public String addNewArtbookConfirmation(@ModelAttribute Artbook artbook, Model model) {
-		artbookService.saveArtbook(artbook);
+	public String addNewArtbookConfirmation(@ModelAttribute Artbook artbook, @ModelAttribute("action") String action, @RequestParam("fileToUpload") MultipartFile  uploadFile, Model model) {
+		artbookService.processAddUpdate(artbook, action, uploadFile);
 		return "adminArtbookAdded";
 		
+	}
+	
+	@RequestMapping(value="/edit/{id}", method=RequestMethod.GET)
+	public String editSerie(@PathVariable Long id, Model model) {
+		model.addAttribute("artbook",  artbookService.getArtbookByID(id));
+		model.addAttribute("series", serieService.getAllSeries() );
+		model.addAttribute("autors", autorService.getAllAutors());
+		model.addAttribute("languages", languageService.getAllLanguages());
+		model.addAttribute("action", "edit");
+		return "adminArtbookAddEdit";
 	}
 }

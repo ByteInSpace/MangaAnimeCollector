@@ -24,15 +24,15 @@ public class Artbook {
 	private String artbookTitle;
 	private int ISBN;
 	private int artbookCondition;
-	private String image;
+	private String fileName;
 	
 	
 	
-	public String getImage() {
-		return image;
+	public String getFileName() {
+		return fileName;
 	}
-	public void setImage(String image) {
-		this.image = image;
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
 	}
 	public Long getId() {
 		return id;
