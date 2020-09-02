@@ -29,12 +29,12 @@ public class ArtbookService {
 		artbookRepository.deleteById(id);
 	}
 	
-	public void saveSerie(Artbook artbook) {
+	public void saveArtbook(Artbook artbook) {
 		log.info("Saving " + artbook.toString());
 		artbookRepository.save(artbook);
 	}
 
-	public void updateSerie(Artbook artbook) {
+	public void updateArtbook(Artbook artbook) {
 		log.info("Updating " + artbook.toString());
 		artbookRepository.save(artbook);
 	}
@@ -45,8 +45,8 @@ public class ArtbookService {
 			artbook.setFileName(fileName);
 		
 		if (action.equals("edit"))
-			updateSerie(artbook);
+			updateArtbook(artbook);
 		else
-			saveSerie(artbook);
+			saveArtbook(artbook);
 	}
 }

@@ -3,7 +3,6 @@
 	xmlns:th="http://www.thymeleaf.org">
 
 <head>
-  <title>Anime Manga Database</title>
   <meta name="description" content="website description" />
   <meta name="keywords" content="website keywords, website keywords" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -20,23 +19,21 @@
       
       <div id="content">
         
-   <h1>Artbooks</h1>
+   <h1>Publisher</h1>
 <table>
 	<thead>
 		<tr>
 			<th></th>
-			<th>Serie</th>
 			<th>Name</th>
 		</tr>
 		<tbody>
-			<tr th:each=" artbook : ${artbooks}">
+			<tr th:each=" publisher : ${publishers}">
 				<td>
-					<a th:href="@{/artbook/{id}(id=${artbook.id})}">
-						<img th:src="@{'/collection/artbook/thumb/' + ${artbook.fileName}}" />
+					<a th:href="@{/publisher/{id}(id=${publisher.id})}">
+				 		<img th:src="@{'/collection/publisher/thumb/' + ${publisher.fileName}}" />
 					</a>
 				</td> 
-				<td><span th:text="${artbook.serie.nameDeutsch}">Serie</span></td>
-				<td><span th:text="${artbook.artbookTitle}">Name Deutsch</span></td>
+				<td><span th:text="${publisher.vorname}">Vorname</span></td>
 		</tbody>
 </table>
       </div>

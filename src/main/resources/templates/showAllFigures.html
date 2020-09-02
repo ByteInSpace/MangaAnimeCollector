@@ -20,23 +20,23 @@
       
       <div id="content">
         
-   <h1>Artbooks</h1>
+   <h1>Figuren</h1>
 <table>
 	<thead>
 		<tr>
 			<th></th>
 			<th>Serie</th>
-			<th>Name</th>
+			<th>FigurName</th>
 		</tr>
 		<tbody>
-			<tr th:each=" artbook : ${artbooks}">
+			<tr th:each=" figure : ${figures}">
 				<td>
-					<a th:href="@{/artbook/{id}(id=${artbook.id})}">
-						<img th:src="@{'/collection/artbook/thumb/' + ${artbook.fileName}}" />
+					<a th:href="@{/figure/{id}(id=${figure.id})}">
+				 		<img th:src="@{'/collection/figure/thumb/' + ${figure.fileName}}" />
 					</a>
 				</td> 
-				<td><span th:text="${artbook.serie.nameDeutsch}">Serie</span></td>
-				<td><span th:text="${artbook.artbookTitle}">Name Deutsch</span></td>
+				<td><span th:text="${figure.serie.nameDeutsch}">Serie</span></td>
+				<td><span th:text="${figure.figureName}">Name Deutsch</span></td>
 		</tbody>
 </table>
       </div>

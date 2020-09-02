@@ -20,11 +20,11 @@
      
       <div id="content">
         
-        <h1>Neuen Artbook hinzufügen</h1>
+        <h1>Neue Figur hinzufügen</h1>
         
-        <form action="#" th:action="@{/admin/artbook/addNewArtbookConfirmation}" th:object="${artbook}" method="post"  enctype="multipart/form-data">
+        <form action="#" th:action="@{/admin/figure/addNewFigureConfirmation}" th:object="${figure}" method="post"  enctype="multipart/form-data">
           
-          <img th:src="@{'/collection/artbook/' + *{fileName}}" />
+          <img th:src="@{'/collection/figure/' + *{fileName}}" />
           
           <input type="hidden" th:field="*{id}" />
            <input type="hidden" th:field="*{fileName}" />
@@ -47,41 +47,30 @@
 			</td>
 		</tr>
 		<tr>
-			<td>Autor:</td>
+			<td>Publisher:</td>
 			<td>
-				<select th:field="*{autor}" name="autor">
+				<select th:field="*{publisher}" name="publisher">
 				<option value="0">Bitte auswählen</option>
-				<option th:each="autor : ${autors}"
-					th:value="${autor.id}"
-					th:text="${autor.nachname} + ', ' + ${autor.vorname}"></option>
+				<option th:each="publisher : ${publishers}"
+					th:value="${publisher.id}"
+					th:text="${publisher.name}"></option>
 				
 				</select>			
 			</td>
 		</tr>
 		<tr>
-				<td>Titel:</td>
-				<td><input type="text" th:field="*{artbookTitle}" /></td>
+				<td>Figurname:</td>
+				<td><input type="text" th:field="*{figureName}" /></td>
 			</tr>
-		<tr>
-			<td>Sprache:</td>
-			<td>
-				<select th:field="*{language}" name="language">
-				<option value="0">Bitte auswählen</option>
-				<option th:each="language : ${languages}"
-					th:value="${language.id}"
-					th:text="${language.language}"></option>
-				
-				</select>			
-			</td>
-		</tr>	
+			
 			<tr>
-				<td>ISBN:</td>
-				<td><input type="text" th:field="*{ISBN}" /></td>
+				<td>OVP:</td>
+				<td><input type="checkbox" th:field="*{ovp}" /></td>
 			</tr>
 			<tr>
 				<td>Zustand:</td>
 				<td>
-					<select th:field="*{artbookCondition}">
+					<select th:field="*{figureCondition}">
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>

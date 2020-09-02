@@ -3,7 +3,7 @@
 	xmlns:th="http://www.thymeleaf.org">
 
 <head>
-  <title>Retrocomputer Database</title>
+  <title>Anime Manga  Database</title>
   <meta name="description" content="website description" />
   <meta name="keywords" content="website keywords, website keywords" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -12,27 +12,28 @@
 
 <body>
   <div id="main">
-    <div id="header">
-      <div th:replace="headerfiles :: header">
+    <div id="adminheader">
+      <div th:replace="adminheaderfiles :: adminheader">
       </div>
     </div>
     <div id="site_content">
-      <div class="sidebar">
-        <div th:replace="sidebar :: sidebar"> </div> 
-      </div>
+      
       <div id="content">
-        
-   <h1>Computerhersteller</h1>
-<table>
+        <a href="/admin/publisher/add">Neuen Publisher anlegen</a>
+   <table>
 	<thead>
 		<tr>
 			<th></th>
-			<th>Hersteller</th>
+			<th>Name</th>
+			<th>Edit</th>
+			<th>Delete</th>
 		</tr>
 		<tbody>
-			<tr th:each=" company : ${companies}">
-				<td><img th:src="@{/images/thumb/{companythumb}(companythumb=${company.thumb})}"></td>
-				<td><span th:text="${company.name}">Name</span></td>
+			<tr th:each="publisher : ${publishers}">
+				<td><img th:src="@{'/collection/publisher/thumb/' + ${publisher.fileName}}" />
+				<td><span th:text="${publisher.name}">Name</span></td>
+				<td><a th:href="@{/admin/publisher/edit/{id}(id=${publisher.id})}">Edit</a></td>
+				<td><a th:href="@{/admin/publisher/delete/{id}(id=${publisher.id})}">Delete</a></td>
 		</tbody>
 </table>
       </div>

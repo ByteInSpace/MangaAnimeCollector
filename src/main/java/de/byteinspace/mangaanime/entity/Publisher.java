@@ -1,8 +1,11 @@
 package de.byteinspace.mangaanime.entity;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Publisher {
@@ -11,6 +14,11 @@ public class Publisher {
 	@GeneratedValue
 	private Long id;
 	private String name;
+	private String fileName;
+	
+	
+	@OneToMany(mappedBy = "publisher")
+	private List<Figure> figures;
 	
 	
 	public Long getId() {
@@ -24,6 +32,12 @@ public class Publisher {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getFileName() {
+		return fileName;
+	}
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
 	}
 	
 	

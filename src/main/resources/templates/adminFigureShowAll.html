@@ -3,7 +3,7 @@
 	xmlns:th="http://www.thymeleaf.org">
 
 <head>
-  <title>Anime Manga Database</title>
+  <title>Anime Manga  Database</title>
   <meta name="description" content="website description" />
   <meta name="keywords" content="website keywords, website keywords" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -12,31 +12,30 @@
 
 <body>
   <div id="main">
-    <div id="header">
-      <div th:replace="headerfiles :: header">
+    <div id="adminheader">
+      <div th:replace="adminheaderfiles :: adminheader">
       </div>
     </div>
     <div id="site_content">
       
       <div id="content">
-        
-   <h1>Artbooks</h1>
-<table>
+        <a href="/admin/figure/addNewFigure">Neue Figur anlegen</a>
+   <table>
 	<thead>
 		<tr>
 			<th></th>
 			<th>Serie</th>
-			<th>Name</th>
+			<th>Figur Name</th>
+			<th>Edit</th>
+			<th>Delete</th>
 		</tr>
 		<tbody>
-			<tr th:each=" artbook : ${artbooks}">
-				<td>
-					<a th:href="@{/artbook/{id}(id=${artbook.id})}">
-						<img th:src="@{'/collection/artbook/thumb/' + ${artbook.fileName}}" />
-					</a>
-				</td> 
-				<td><span th:text="${artbook.serie.nameDeutsch}">Serie</span></td>
-				<td><span th:text="${artbook.artbookTitle}">Name Deutsch</span></td>
+			<tr th:each=" figure : ${figures}">
+				<td><img th:src="@{'/collection/figure/thumb/' + ${figure.fileName}}" />
+				<td><span th:text="${figure.serie.nameDeutsch}">Serie</span></td>
+				<td><span th:text="${figure.figureName}">Name Deutsch</span></td>
+				<td><a th:href="@{/admin/figure/edit/{id}(id=${figure.id})}">Edit</a></td>
+				<td><a th:href="@{/admin/figure/delete/{id}(id=${figure.id})}">Delete</a></td>
 		</tbody>
 </table>
       </div>

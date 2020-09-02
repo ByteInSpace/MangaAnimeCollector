@@ -19,8 +19,8 @@
     <div id="site_content">
      
       <div id="content">
-        
-          <img th:src="@{/images/collectionimages/{artbookimage}(artbookimage=${artbook.fileName})}" width="200" height="200">
+       
+        <img th:src="@{'/collection/artbook/' + ${artbook.fileName}}" />
           
 <table>
 	<thead>
