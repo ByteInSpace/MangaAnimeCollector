@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>Anime Manga  Database</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" th:href="@{/style/style.css}" title="style" />
+</head>
+
+<body>
+  <div id="main">
+    <div id="adminheader">
+      <div th:replace="adminheaderfiles :: adminheader">
+      </div>
+    </div>
+    <div id="site_content">
+      
+      <div id="content">
+        <a href="/admin/anime/addNewAnime">Neues Anime anlegen</a>
+   <table>
+	<thead>
+		<tr>
+			<th></th>
+			<th>Serie</th>
+			<th>Name</th>
+			<th>Volume</th>
+			<th>Edit</th>
+			<th>Delete</th>
+		</tr>
+		<tbody>
+			<tr th:each="anime : ${animes}">
+				<td><img th:src="@{'/collection/anime/thumb/' + ${anime.fileName}}" />
+				<td><span th:text="${anime.serie.nameDeutsch}">Serie</span></td>
+				<td><span th:text="${anime.animeTitle}">Name Deutsch</span></td>
+				<td><span th:text="${anime.animeVolume}">Volume</span></td>
+				<td><a th:href="@{/admin/anime/edit/{id}(id=${anime.id})}">Edit</a></td>
+				<td><a th:href="@{/admin/anime/delete/{id}(id=${anime.id})}">Delete</a></td>
+		</tbody>
+</table>
+      </div>
+    </div>
+    <div id="footer">
+    <div th:replace="footer :: footer">  
+  	</div>
+  </div>
+</body>
+</html>
+

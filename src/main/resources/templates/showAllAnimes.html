@@ -20,23 +20,25 @@
       
       <div id="content">
         
-   <h1>Figuren</h1>
+   <h1>Animes</h1>
 <table>
 	<thead>
 		<tr>
 			<th></th>
 			<th>Serie</th>
-			<th>Figurname</th>
+			<th>Anime</th>
+			<th>Volume</th>
 		</tr>
 		<tbody>
-			<tr th:each=" figure : ${figures}">
+			<tr th:each=" anime : ${animes}">
 				<td>
-					<a th:href="@{/figure/{id}(id=${figure.id})}">
-				 		<img th:src="@{'/collection/figure/thumb/' + ${figure.fileName}}" />
+					<a th:href="@{/anime/{id}(id=${anime.id})}">
+				 		<img th:src="@{'/collection/anime/thumb/' + ${anime.fileName}}" />
 					</a>
 				</td> 
-				<td><span th:text="${figure.serie.nameDeutsch}">Serie</span></td>
-				<td><span th:text="${figure.figureName}">Name Deutsch</span></td>
+				<td><span th:text="${anime.serie.nameDeutsch}">Serie</span></td>
+				<td><span th:text="${anime.animeTitle}">Name Deutsch</span></td>
+				<td><span th:text="${anime.animeVolume}">Anime Volume</span></td>
 		</tbody>
 </table>
       </div>

@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" th:href="@{/style/style.css}" title="style" />
+</head>
+
+<body>
+  <div id="main">
+    <div id="adminheader">
+      <div th:replace="adminheaderfiles :: adminheader">
+      </div>
+    </div>
+    <div id="site_content">
+     
+      <div id="content">
+        
+        <h1>Neue Anime hinzufügen</h1>
+        
+        <form action="#" th:action="@{/admin/anime/addNewAnimeConfirmation}" th:object="${anime}" method="post"  enctype="multipart/form-data">
+          
+          <img th:src="@{'/collection/anime/' + *{fileName}}" />
+          
+          <input type="hidden" th:field="*{id}" />
+           <input type="hidden" th:field="*{fileName}" />
+           
+           <input type="file" name="fileToUpload">
+<table>
+	<thead>
+		
+		<tbody>
+		<tr>
+			<td>Serie:</td>
+			<td>
+				<select th:field="*{serie}" name="serie">
+				<option value="0">Bitte auswählen</option>
+				<option th:each="serie : ${series}"
+					th:value="${serie.id}"
+					th:text="${serie.nameDeutsch} + ' : ' + ${serie.nameOrginal}"></option>
+				
+				</select>			
+			</td>
+		</tr>
+		<tr>
+			<td>Autor:</td>
+			<td>
+				<select th:field="*{autor}" name="autor">
+				<option value="0">Bitte auswählen</option>
+				<option th:each="autor : ${autors}"
+					th:value="${autor.id}"
+					th:text="${autor.nachname} + ', ' + ${autor.vorname}"></option>
+				
+				</select>			
+			</td>
+		</tr>
+		<tr>
+				<td>Titel:</td>
+				<td><input type="text" th:field="*{animeTitle}" /></td>
+			</tr>
+			<tr>
+				<td>Volume:</td>
+				<td><input type="text" th:field="*{animeVolume}" /></td>
+			</tr>
+			<tr>
+				<td>BluRay:</td>
+				<td><input type="checkbox" th:field="*{bluRay}" /></td>
+			</tr>
+			<tr>
+				<td>Zustand:</td>
+				<td>
+					<select th:field="*{animeCondition}">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+					</select>
+				
+			</tr>
+			
+		</tbody>
+</table>
+
+<p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+
+</form>
+
+      </div>
+    </div>
+    <div id="footer">
+    <div th:replace="footer :: footer">  
+  	</div>
+  </div>
+</body>
+</html>
+

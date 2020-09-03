@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>Artbooks</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" th:href="@{/style/style.css}" title="style" />
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div th:replace="headerfiles :: header">
+      </div>
+    </div>
+    <div id="site_content">
+     
+      <div id="content">
+       
+        <img th:src="@{'/collection/anime/' + ${anime.fileName}}" />
+          
+<table>
+	<thead>
+		
+		<tbody>
+			<tr>
+				<td>Serie Deutsch:</td>
+				<td><span th:text="${anime.serie.nameDeutsch}">Name Deutsch</span></td>
+			</tr>
+			<tr>
+				<td>Serie:</td>
+				<td><span th:text="${anime.serie.nameOrginal}">Name Japanisch</span></td>
+			</tr>
+			<tr>
+				<td>Titel:</td>
+				<td><span th:text="${anime.animeTitle}">Titel</span></td>
+			</tr>
+			<tr>
+				<td>Volume:</td>
+				<td><span th:text="${anime.animeVolume}">Volume</span></td>
+			</tr>
+			<tr>
+				<td>Autor:</td>
+				<td><span th:text="${anime.autor.vorname}">Vorname</span> <span th:text="${anime.autor.nachname}">Nachname</span></td>
+			</tr>
+			<tr>
+				<td>BluRayP:</td>
+				<td><input type="checkbox" th:field="${anime.bluRay}" readonly>BluRay</td>
+			</tr>
+			<tr>
+				<td>Zustand:</td>
+				<td><span th:text="${anime.animeCondition}">Zustand</span></td>
+			</tr>
+		</tbody>
+</table>
+      </div>
+    </div>
+    <div id="footer">
+    <div th:replace="footer :: footer">  
+  	</div>
+  </div>
+</body>
+</html>
+

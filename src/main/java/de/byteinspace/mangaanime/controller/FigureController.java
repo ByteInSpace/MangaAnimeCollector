@@ -15,7 +15,7 @@ import de.byteinspace.mangaanime.service.FigureService;
 @RequestMapping("/figure")
 public class FigureController {
 	
-@Autowired FigureService figureService;
+	@Autowired FigureService figureService;
 	
 	
 	@GetMapping("/all")

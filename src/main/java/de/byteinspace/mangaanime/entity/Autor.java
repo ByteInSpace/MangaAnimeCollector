@@ -22,6 +22,9 @@ public class Autor {
 	
 	@OneToMany(mappedBy = "autor")
 	private List<Manga> artbooks;
+	
+	@OneToMany(mappedBy = "autor")
+	private List<Anime> animes;
 
 	public Autor() {
 		super();

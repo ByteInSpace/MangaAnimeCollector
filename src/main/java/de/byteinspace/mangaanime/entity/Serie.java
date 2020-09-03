@@ -21,7 +21,8 @@ public class Serie {
 	private List<Manga> mangas;
 	@OneToMany(mappedBy = "serie")
 	private List<Manga> artbooks;
-	
+	@OneToMany(mappedBy = "serie")
+	private List<Anime> animes;
 	
 	
 	public Long getId() {
