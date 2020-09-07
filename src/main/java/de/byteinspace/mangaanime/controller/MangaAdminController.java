@@ -12,63 +12,67 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import de.byteinspace.mangaanime.entity.Artbook;
-import de.byteinspace.mangaanime.service.ArtbookService;
+import de.byteinspace.mangaanime.entity.Manga;
 import de.byteinspace.mangaanime.service.AutorService;
 import de.byteinspace.mangaanime.service.LanguageService;
+import de.byteinspace.mangaanime.service.MangaService;
+import de.byteinspace.mangaanime.service.PublisherService;
 import de.byteinspace.mangaanime.service.SerieService;
 
 @Controller
-@RequestMapping("/admin/artbook")
-public class ArtbookAdminController {
-
-	@Autowired ArtbookService artbookService;
+@RequestMapping("/admin/manga")
+public class MangaAdminController {
+	
+	@Autowired MangaService mangaService;
 	@Autowired SerieService serieService;
 	@Autowired AutorService autorService;
 	@Autowired LanguageService languageService;
+	@Autowired PublisherService publisherService;
 	
 	
 	@GetMapping("/")
-	public String showCreateArtbooksForm(Model model) {
-		model.addAttribute("artbooks", artbookService.getAllArtbooks());
-		return "adminArtbookShowAll";
+	public String showCreateMangasForm(Model model) {
+		model.addAttribute("mangas", mangaService.getAllMangas());
+		return "adminMangaShowAll";
 	}
 	
 	@GetMapping("/showall")
-	public String showAllArtbooks(Model model) {
-		model.addAttribute("artbooks", artbookService.getAllArtbooks());
-		return "adminArtbookShowAll";
+	public String showAllMangas(Model model) {
+		model.addAttribute("mangas", mangaService.getAllMangas());
+		return "adminMangaShowAll";
 	}
 	
 	@RequestMapping(value="delete/{id}", method=RequestMethod.GET)
-	public String deleteArtbookByID(@PathVariable Long id, Model model) {
-		artbookService.deleteArtbookByID(id);
-		return "adminArtbookDeleted";
+	public String deleteMangaByID(@PathVariable Long id, Model model) {
+		mangaService.deleteMangaByID(id);
+		return "adminMangaDeleted";
 	}
 	
-	@GetMapping("/addNewArtbook")
-	public String addNewArtbook(Model model) {
-		model.addAttribute("artbook",  new Artbook());
+	@GetMapping("/addNewManga")
+	public String addNewManga(Model model) {
+		model.addAttribute("manga",  new Manga());
 		model.addAttribute("series", serieService.getAllSeries() );
 		model.addAttribute("autors", autorService.getAllAutors());
 		model.addAttribute("languages", languageService.getAllLanguages());
-		return "adminArtbookAddEdit";
+		model.addAttribute("publishers", publisherService.getAllPublishers());
+		return "adminMangaAddEdit";
 	}
 	
-	@PostMapping("/addNewArtbookConfirmation")
-	public String addNewArtbookConfirmation(@ModelAttribute Artbook artbook, @ModelAttribute("action") String action, @RequestParam("fileToUpload") MultipartFile  uploadFile, Model model) {
-		artbookService.processAddUpdate(artbook, action, uploadFile);
-		return "adminArtbookAdded";
+	@PostMapping("/addNewMangaConfirmation")
+	public String addNewMangaConfirmation(@ModelAttribute Manga manga, @ModelAttribute("action") String action, @RequestParam("fileToUpload") MultipartFile  uploadFile, Model model) {
+		mangaService.processAddUpdate(manga, action, uploadFile);
+		return "adminMangaAdded";
 		
 	}
 	
 	@RequestMapping(value="/edit/{id}", method=RequestMethod.GET)
 	public String editSerie(@PathVariable Long id, Model model) {
-		model.addAttribute("artbook",  artbookService.getArtbookByID(id));
+		model.addAttribute("manga",  mangaService.getMangaByID(id));
 		model.addAttribute("series", serieService.getAllSeries() );
 		model.addAttribute("autors", autorService.getAllAutors());
 		model.addAttribute("languages", languageService.getAllLanguages());
+		model.addAttribute("publishers", publisherService.getAllPublishers());
 		model.addAttribute("action", "edit");
-		return "adminArtbookAddEdit";
+		return "adminMangaAddEdit";
 	}
 }

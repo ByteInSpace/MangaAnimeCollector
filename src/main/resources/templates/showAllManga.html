@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>Anime Manga Database</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" th:href="@{/style/style.css}" title="style" />
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div th:replace="headerfiles :: header">
+      </div>
+    </div>
+    <div id="site_content">
+      
+      <div id="content">
+        
+   <h1>Mangas</h1>
+<table>
+	<thead>
+		<tr>
+			<th></th>
+			<th>Serie</th>
+			<th>Band</th>
+		</tr>
+		<tbody>
+			<tr th:each="manga : ${mangas}">
+				<td>
+					<a th:href="@{/manga/{id}(id=${manga.id})}">
+				 		<img th:src="@{'/collection/manga/thumb/' + ${manga.fileName}}" />
+					</a>
+				</td> 
+				<td><span th:text="${manga.serie.nameDeutsch}">Serie</span></td>
+				<td><span th:text="${manga.bandNummer}">Bandnummer</span></td>
+			</tr>
+		</tbody>
+</table>
+      </div>
+    </div>
+    <div id="footer">
+    <div th:replace="footer :: footer">  
+  	</div>
+  </div>
+</body>
+</html>
+
