@@ -25,7 +25,7 @@
 	<thead>
 		
 		<tbody>
-			<tr>
+			<tr th:if="${figure.serie} != null">
 				<td>Serie Deutsch:</td>
 				<td><span th:text="${figure.serie.nameDeutsch}">Name Deutsch</span></td>
 			</tr>
@@ -33,7 +33,7 @@
 				<td>Name:</td>
 				<td><span th:text="${figure.figureName}">Name</span></td>
 			</tr>
-			<tr>
+			<tr th:if="${figure.publisher} != null">
 				<td>Hersteller:</td>
 				<td><span th:text="${figure.publisher.name}">Publisher</span></td>
 			</tr>

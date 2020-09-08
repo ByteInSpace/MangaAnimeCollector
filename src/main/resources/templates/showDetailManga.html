@@ -26,11 +26,11 @@
 	<thead>
 		
 		<tbody>
-			<tr>
+			<tr th:if="${manga.serie} != null">
 				<td>Serie Deutsch:</td>
 				<td><span th:text="${manga.serie.nameDeutsch}">Name Deutsch</span></td>
 			</tr>
-			<tr>
+			<tr th:if="${manga.serie} != null">
 				<td>Serie:</td>
 				<td><span th:text="${manga.serie.nameOrginal}">Name Japanisch</span></td>
 			</tr>
@@ -46,7 +46,7 @@
 				<td>Verlag:</td>
 				<td><span  th:text="${manga.publisher.name}">Name</span></td>
 			</tr>
-			<tr>
+			<tr th:if="${manga.language} != null">
 				<td>Sprache:</td>
 				<td><span th:text="${manga.language.language}">Sprache</span></td>
 			</tr>

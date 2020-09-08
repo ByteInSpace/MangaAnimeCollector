@@ -26,11 +26,11 @@
 	<thead>
 		
 		<tbody>
-			<tr>
+			<tr th:if="${anime.serie} != null">
 				<td>Serie Deutsch:</td>
 				<td><span th:text="${anime.serie.nameDeutsch}">Name Deutsch</span></td>
 			</tr>
-			<tr>
+			<tr th:if="${anime.serie} != null">
 				<td>Serie:</td>
 				<td><span th:text="${anime.serie.nameOrginal}">Name Japanisch</span></td>
 			</tr>
@@ -42,7 +42,7 @@
 				<td>Volume:</td>
 				<td><span th:text="${anime.animeVolume}">Volume</span></td>
 			</tr>
-			<tr>
+			<tr th:if="${anime.autor} != null">
 				<td>Autor:</td>
 				<td><span th:text="${anime.autor.vorname}">Vorname</span> <span th:text="${anime.autor.nachname}">Nachname</span></td>
 			</tr>

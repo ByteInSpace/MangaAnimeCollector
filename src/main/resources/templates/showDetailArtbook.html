@@ -26,11 +26,11 @@
 	<thead>
 		
 		<tbody>
-			<tr>
+			<tr th:if="${artbook.serie} != null">
 				<td>Serie Deutsch:</td>
 				<td><span th:text="${artbook.serie.nameDeutsch}">Name Deutsch</span></td>
 			</tr>
-			<tr>
+			<tr th:if="${artbook.serie} != null">
 				<td>Serie:</td>
 				<td><span th:text="${artbook.serie.nameOrginal}">Name Japanisch</span></td>
 			</tr>
@@ -38,11 +38,11 @@
 				<td>Titel:</td>
 				<td><span th:text="${artbook.artbookTitle}">Titel</span></td>
 			</tr>
-			<tr>
+			<tr th:if="${artbook.autor} != null">
 				<td>Autor:</td>
 				<td><span th:text="${artbook.autor.vorname}">Vorname</span> <span th:text="${artbook.autor.nachname}">Nachname</span></td>
 			</tr>
-			<tr>
+			<tr th:if="${artbook.language} != null">
 				<td>Sprache:</td>
 				<td><span th:text="${artbook.language.language}">Sprache</span></td>
 			</tr>
